@@ -1,0 +1,45 @@
+# Resource Monitor Configuration
+monitoring:
+  # Network monitoring settings
+  network:
+    interface: "enp4s0"
+    interval: "1s"
+  
+  # PSI monitoring settings
+  psi:
+    memory:
+      threshold_us: 150000
+      window_us: 1000000
+      kind: "some"
+    cpu:
+      threshold_us: 100000
+      window_us: 1000000
+      kind: "some"
+    io:
+      threshold_us: 150000
+      window_us: 1000000
+      kind: "full"
+    memory_poll_interval: "1s"
+  
+  # Performance monitoring settings
+  perf:
+    interval: "1s"
+    events:
+      - "LLC-loads"
+      - "LLC-load-misses"
+      - "LLC-stores"
+      - "LLC-store-misses"
+      - "instructions"
+      - "unc_m_cas_count_rd"
+      - "unc_m_cas_count_wr"
+
+# Output settings
+output:
+  console: true
+  log_level: "info"
+  metrics_interval: "1s"
+
+# PSI scope settings
+psi_scope:
+  type: "system"  # "system" or "cgroup"
+  cgroup_path: "/sys/fs/cgroup"
