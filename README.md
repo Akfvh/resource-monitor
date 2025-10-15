@@ -114,6 +114,6 @@ psi_scope:
 - perf tool
   - perf support for specified events
 
-## 라이선스
+## License
 
 MIT License
